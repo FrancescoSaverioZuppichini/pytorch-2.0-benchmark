@@ -5,9 +5,9 @@ If you think I've done something wrong, please PR 🙏
 
 |   GTX3090 |   V100 |
 |-------------:|-----------:|
-|![alt](results.jpeg) | ![alt](results_v100.jpeg)
+|![alt](results.jpeg) | ![alt](results_v100.jpeg) |
 
-**TL;DR** `torch.compile doesn't do anything and onnx is slower` 
+**TL;DR** `torch.compile doesn't do anything in this specific case` 
 
 **RTX 3090** 
 |   batch_size |   torch2.0 |   torch2.0+compile |   onnx+cuda |

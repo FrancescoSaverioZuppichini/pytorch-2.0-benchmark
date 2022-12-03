@@ -1,0 +1,4 @@
+git+https://github.com/openai/CLIP 
+onnxruntime-gpu
+pandas
+tqdm

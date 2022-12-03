@@ -8,6 +8,7 @@ import onnxruntime as ort
 import pandas as pd
 import torch
 from tqdm import tqdm
+import numpy as np
 
 torch.backends.cudnn.benchmark = True
 
@@ -75,7 +76,7 @@ class ClipTorchBenchmark(Benchmark):
 
     @torch.no_grad()
     def run(self):
-        self.model.encode_image(self.image)
+        out = self.model.encode_image(self.image)
 
 
 class ClipTorchCompiledBenchmark(ClipTorchBenchmark):
@@ -100,12 +101,12 @@ class ClipOnnxBenchmark(Benchmark):
         x = torch.randn((batch_size, 3, 224, 224)).numpy()
         # see https://onnxruntime.ai/docs/api/python/api_summary.html#data-on-device
         image = ort.OrtValue.ortvalue_from_numpy(x, device_id, 0)
-        output = ort.OrtValue.ortvalue_from_shape_and_type(
-            [batch_size, 512], x.dtype, device_id, 0
+        self.output = ort.OrtValue.ortvalue_from_shape_and_type(
+            [batch_size, 512], np.float16, device_id, 0
         )
         self.io_binding = self.session.io_binding()
         self.io_binding.bind_ortvalue_input("image", image)
-        self.io_binding.bind_ortvalue_output("output", output)
+        self.io_binding.bind_ortvalue_output("output", self.output)
 
     def run(self):
         self.session.run_with_iobinding(self.io_binding)

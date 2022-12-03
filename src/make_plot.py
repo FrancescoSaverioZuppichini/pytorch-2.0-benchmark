@@ -29,5 +29,7 @@ plot_df = plot_df.set_index("batch_size")
 # printing to copy inside the readme
 print(plot_df.to_markdown())
 # print(plot_df)
-plot_df.plot(y=["torch2.0", "torch2.0+compile", "onnx+cuda"], kind="bar")
+ax = plot_df.plot(y=["torch2.0", "torch2.0+compile", "onnx+cuda"], kind="bar")
+ax.set_ylabel("Time (ms)")
+ax.set_xlabel("Batch Size")
 plt.gcf().savefig("results.jpeg", dpi=800)

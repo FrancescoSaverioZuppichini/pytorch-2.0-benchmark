@@ -2,7 +2,7 @@
 
 [PyTorch 2.0](https://pytorch.org/get-started/pytorch-2.0/#requirements) is out, let's see how fast is `torch.compile`. We will use OpenaAI Clip since it's a very used model and **they have an jit version** so I can run it in onnx.
 
-If you think I've done something wrong, please PR 😀
+If you think I've done something wrong, please PR 🙏
 
 ![alt](results.jpeg)
 

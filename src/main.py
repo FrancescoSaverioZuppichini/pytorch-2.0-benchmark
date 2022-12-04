@@ -70,13 +70,13 @@ class Benchmark:
 class ClipTorchBenchmark(Benchmark):
     def __init__(self):
         self.model, _ = clip.load("ViT-B/32", jit=False, device="cuda")
-
+        self.model.visual = self.model.visual.eval()
     def setup(self, batch_size: int):
-        self.image = torch.randn((batch_size, 3, 224, 224), device="cuda")
+        self.image = torch.randn((batch_size, 3, 224, 224), device="cuda").half()
 
     @torch.no_grad()
     def run(self):
-        out = self.model.encode_image(self.image)
+        self.model.encode_image(self.image)
 
 
 class ClipTorchCompiledBenchmark(ClipTorchBenchmark):

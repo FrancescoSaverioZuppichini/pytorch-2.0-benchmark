@@ -1,5 +1,7 @@
 ## PyTorch 2.0 benchmark
-[PyTorch 2.0](https://pytorch.org/get-started/pytorch-2.0/#requirements) is out, let's see how fast is 1torch.compile1`. 
+![img](header.png)
+
+[PyTorch 2.0](https://pytorch.org/get-started/pytorch-2.0/#requirements) is out, let's see how fast is `torch.compile`. 
 
 **code is [here](https://github.com/FrancescoSaverioZuppichini/pytorch-2.0-benchmark)**
 

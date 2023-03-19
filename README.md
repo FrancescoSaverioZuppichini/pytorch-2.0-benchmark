@@ -79,11 +79,11 @@ Results will be stored in `results/results.csv`
 
 We will use several models, mostly different ViTs from OpenAI CLIP. We won't use models from timm or hugging face since for ViTs they don't use `torch.nn.MultiHeadAttention`, so they are slower by default in inference. In addition, we will use the good and old `resnet34`. `convetnext-base` seems to break `torch.compile`, see [issue](https://github.com/pytorch/pytorch/issues/97018)
 
-Specifically, are running **five models**: `resnet34`, `resnext50_32x4d`, `clip_vision_vit-b/32`, ,`clip_vision_vit-l/14`, and `clip_vision_vit-rn50` with `batch_sizes` of `(1 4 8 16 32 64)` on `image_size=224x224`.  For the conv nets, we are also running with `image_size=640`.
+Specifically, we are running **five models**: `resnet34`, `resnext50_32x4d`, `clip_vision_vit-b/32`, ,`clip_vision_vit-l/14`, and `clip_vision_vit-rn50` with `batch_sizes` of `(1 4 8 16 32 64)` on `image_size=224x224`.  For the conv nets, we are also running with `image_size=640`.
 
 I am compiling the models with `model = torch.compile(model, mode="max-autotune")`, to see the best performance we can get. It takes a couple of minutes depending on the model itself.
 
-I am using torch torch.utils.benchmark.Timer` to benchmark each run.
+I am using torch `torch.utils.benchmark.Timer` to benchmark each run.
 
 ## Results
 ### Torch 2.0 vs Torch.2.0 compile
@@ -98,7 +98,7 @@ I am using torch torch.utils.benchmark.Timer` to benchmark each run.
 | resnext50_32x4d | ![img](plots/resnext50_32x4d-224-results.jpeg)  |  224 |
 | resnext50_32x4d | ![img](plots/resnext50_32x4d-640-results.jpeg)  |  640 |
 | clip_vision_vit-b/32 | ![img](plots/clip_vision_vit-b-32-224-results.jpeg)  |  224 |
-| clip_vision_vit-l/14 | ![img](plots/clip_vision_vit-b-14-224-results.jpeg) | 224 |
+| clip_vision_vit-l/14 | ![img](plots/clip_vision_vit-l-14-224-results.jpeg) | 224 |
 | clip_vision_vit-rn50 | ![img](plots/clip_vision_vit-rn50-224-results.jpeg) | 224 |
 
 ### Torch 2.0 vs cudnn.benchmark=True

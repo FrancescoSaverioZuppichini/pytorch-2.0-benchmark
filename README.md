@@ -3,7 +3,7 @@
 
 **code is [here](https://github.com/FrancescoSaverioZuppichini/pytorch-2.0-benchmark)**
 
-**I am using `torch==2.1.0`
+**I am using `torch==2.1.0`**
 
 If you think I've done something wrong, please PR 🙏
 
@@ -77,7 +77,7 @@ Results will be stored in `results/results.csv`
 
 We will use several models, mostly different ViTs from OpenAI CLIP. We won't use models from timm or hugging face since for ViTs they don't use `torch.nn.MultiHeadAttention`, so they are slower by default in inference. In addition, we will use the good and old `resnet34`. `convetnext-base` seems to break `torch.compile`, see [issue](https://github.com/pytorch/pytorch/issues/97018)
 
-Specifically, are running **five models**: `resnet34`, `resnext50_32x4d`, `clip_vision_vit-b/32`, ,`clip_vision_vit-l/14, and `clip_vision_vit-rn50` with `batch_sizes` of `(1 4 8 16 32 64)` on `image_size=224x224`.  For the conv nets, we are also running with `image_size=640`.
+Specifically, are running **five models**: `resnet34`, `resnext50_32x4d`, `clip_vision_vit-b/32`, ,`clip_vision_vit-l/14`, and `clip_vision_vit-rn50` with `batch_sizes` of `(1 4 8 16 32 64)` on `image_size=224x224`.  For the conv nets, we are also running with `image_size=640`.
 
 I am compiling the models with `model = torch.compile(model, mode="max-autotune")`, to see the best performance we can get. It takes a couple of minutes depending on the model itself.
 

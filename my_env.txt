@@ -1,0 +1,89 @@
+Collecting environment information...
+PyTorch version: 2.1.0.dev20230316+cu117
+Is debug build: False
+CUDA used to build PyTorch: 11.7
+ROCM used to build PyTorch: N/A
+
+OS: Ubuntu 22.10 (x86_64)
+GCC version: (Ubuntu 12.2.0-3ubuntu1) 12.2.0
+Clang version: Could not collect
+CMake version: version 3.25.0
+Libc version: glibc-2.36
+
+Python version: 3.9.13 (main, Aug 25 2022, 23:26:10)  [GCC 11.2.0] (64-bit runtime)
+Python platform: Linux-5.19.0-35-generic-x86_64-with-glibc2.36
+Is CUDA available: True
+CUDA runtime version: Could not collect
+CUDA_MODULE_LOADING set to: LAZY
+GPU models and configuration: GPU 0: NVIDIA GeForce RTX 3090
+Nvidia driver version: 525.60.11
+cuDNN version: Probably one of the following:
+/usr/local/cuda-11.7/targets/x86_64-linux/lib/libcudnn.so.8
+/usr/local/cuda-11.7/targets/x86_64-linux/lib/libcudnn_adv_infer.so.8
+/usr/local/cuda-11.7/targets/x86_64-linux/lib/libcudnn_adv_train.so.8
+/usr/local/cuda-11.7/targets/x86_64-linux/lib/libcudnn_cnn_infer.so.8
+/usr/local/cuda-11.7/targets/x86_64-linux/lib/libcudnn_cnn_train.so.8
+/usr/local/cuda-11.7/targets/x86_64-linux/lib/libcudnn_ops_infer.so.8
+/usr/local/cuda-11.7/targets/x86_64-linux/lib/libcudnn_ops_train.so.8
+HIP runtime version: N/A
+MIOpen runtime version: N/A
+Is XNNPACK available: True
+
+CPU:
+Architecture:                    x86_64
+CPU op-mode(s):                  32-bit, 64-bit
+Address sizes:                   43 bits physical, 48 bits virtual
+Byte Order:                      Little Endian
+CPU(s):                          16
+On-line CPU(s) list:             0-15
+Vendor ID:                       AuthenticAMD
+Model name:                      AMD Ryzen 7 2700X Eight-Core Processor
+CPU family:                      23
+Model:                           8
+Thread(s) per core:              2
+Core(s) per socket:              8
+Socket(s):                       1
+Stepping:                        2
+Frequency boost:                 enabled
+CPU(s) scaling MHz:              67%
+CPU max MHz:                     3700,0000
+CPU min MHz:                     2200,0000
+BogoMIPS:                        7399.10
+Flags:                           fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb hw_pstate ssbd ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt sha_ni xsaveopt xsavec xgetbv1 xsaves clzero irperf xsaveerptr arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif overflow_recov succor smca sev sev_es
+Virtualization:                  AMD-V
+L1d cache:                       256 KiB (8 instances)
+L1i cache:                       512 KiB (8 instances)
+L2 cache:                        4 MiB (8 instances)
+L3 cache:                        16 MiB (2 instances)
+NUMA node(s):                    1
+NUMA node0 CPU(s):               0-15
+Vulnerability Itlb multihit:     Not affected
+Vulnerability L1tf:              Not affected
+Vulnerability Mds:               Not affected
+Vulnerability Meltdown:          Not affected
+Vulnerability Mmio stale data:   Not affected
+Vulnerability Retbleed:          Mitigation; untrained return thunk; SMT vulnerable
+Vulnerability Spec store bypass: Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:        Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:        Mitigation; Retpolines, IBPB conditional, STIBP disabled, RSB filling, PBRSB-eIBRS Not affected
+Vulnerability Srbds:             Not affected
+Vulnerability Tsx async abort:   Not affected
+
+Versions of relevant libraries:
+[pip3] mypy-extensions==0.4.3
+[pip3] numpy==1.24.1
+[pip3] pytorch-lightning==2.0.0
+[pip3] pytorch-triton==2.1.0+2c32f43999
+[pip3] torch==2.1.0.dev20230316+cu117
+[pip3] torchaudio==0.12.1+cu116
+[pip3] torchmetrics==0.11.4
+[pip3] torchtriton==2.0.0+0d7e753227
+[pip3] torchvision==0.16.0.dev20230316+cu117
+[conda] numpy                     1.24.1                   pypi_0    pypi
+[conda] pytorch-lightning         2.0.0                    pypi_0    pypi
+[conda] pytorch-triton            2.1.0+2c32f43999          pypi_0    pypi
+[conda] torch                     2.1.0.dev20230316+cu117          pypi_0    pypi
+[conda] torchaudio                0.12.1+cu116             pypi_0    pypi
+[conda] torchmetrics              0.11.4                   pypi_0    pypi
+[conda] torchtriton               2.0.0+0d7e753227          pypi_0    pypi
+[conda] torchvision               0.16.0.dev20230316+cu117          pypi_0    pypi
